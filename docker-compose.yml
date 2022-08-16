@@ -9,9 +9,11 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
   php:
     build: 
-      - context:
-      -  
+      - context: ./dockerfile
+      - dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html:delegated
   # mysql:
-  # composer:
+  # composer: 
   # artisan:
   # npm:
