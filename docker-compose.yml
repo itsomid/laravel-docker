@@ -20,3 +20,8 @@ services:
     volumes:
       - mysqldb:/var/lib/mysql:rw
   composer:
+    build: 
+      context: ./dockerfile
+      dockerfile: composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
